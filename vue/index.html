@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name=”robots” content=”noindex,nofollow“>
+  <title>Vue.js App</title>
+
+  <!-- update the version number as needed -->
+  <script defer src="/__/firebase/5.5.0/firebase-app.js"></script>
+  <!-- include only the Firebase features as you need -->
+  <script defer src="/__/firebase/5.5.0/firebase-auth.js"></script>
+  <script defer src="/__/firebase/5.5.0/firebase-database.js"></script>
+  <script defer src="/__/firebase/5.5.0/firebase-messaging.js"></script>
+  <script defer src="/__/firebase/5.5.0/firebase-storage.js"></script>
+  <!-- initialize the SDK after all desired features are loaded -->
+  <script defer src="/__/firebase/init.js"></script>
+  <link rel="stylesheet" href="main.css">
+
+
+</head>
+
+<body>
+  <div id="app">
+    <button v-on:click="show=!show">切り替え</button>
+    <transition>
+      <p v-if="show">Hello Vue.js!</p>
+    </transition>
+  </div>
+
+  <script src="https://www.gstatic.com/firebasejs/5.5.0/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyBFsxTE-01YGns0WFjtBp4jvMgQU04V1_o",
+      authDomain: "clue-1988.firebaseapp.com",
+      databaseURL: "https://clue-1988.firebaseio.com",
+      projectId: "clue-1988",
+      storageBucket: "clue-1988.appspot.com",
+      messagingSenderId: "599184901070"
+    };
+    firebase.initializeApp(config);
+  </script>
+  <!-- <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+      // // The Firebase SDK is initialized and available here!
+      //
+      // firebase.auth().onAuthStateChanged(user => { });
+      // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
+      // firebase.messaging().requestPermission().then(() => { });
+      // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
+      //
+      // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+
+      try {
+        let app = firebase.app();
+        let features = ['auth', 'database', 'messaging', 'storage'].filter(feature => typeof app[feature] === 'function');
+        document.getElementById('load').innerHTML = `Firebase SDK loaded with ${features.join(', ')}`;
+      } catch (e) {
+        console.error(e);
+        document.getElementById('load').innerHTML = 'Error loading the Firebase SDK, check the console.';
+      }
+    });
+  </script> -->
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
+  <script src="main.js"></script>
+</body>
+
+</html>
